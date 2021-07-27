@@ -12,4 +12,5 @@ function component() {
 
 document.body.appendChild(component());
 console.log($(`.${styles.helloWebpack}`.length));
+console.log(`Is production mode? ${IS_PRODUCTION}`);
 //jquery 사용
