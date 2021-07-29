@@ -1,7 +1,5 @@
-import 'normalize.css';
 import styles from './index.module.scss';
 import $ from 'jquery';
-import './assets/Messi2.jpg';
 import svg from './assets/sample.svg';
 
 function component() {

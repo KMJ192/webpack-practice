@@ -4,6 +4,14 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
 
+const postcssLoader = {
+    loader: 'postcss-loader',
+    options: {
+        postcssOptions: {
+            config: path.resolve(__dirname, 'postcss.config.js')
+        }
+    }
+}
 const isProduction = process.env.NODE_ENV === 'PRODUCTION';
 
 module.exports = {
@@ -20,24 +28,22 @@ module.exports = {
                     {
                         test: /\.module\.s?css$/,
                         use: [
-                            {
-                                loader: MiniCssExtractPlugin.loader
-                            },
+                            MiniCssExtractPlugin.loader,
                             {
                                 loader: 'css-loader',
                                 options:{
                                     modules: true
                                 }
                             },
-                            {
-                                loader: 'sass-loader'
-                            }
+                            postcssLoader,
+                            'sass-loader'
                         ]
                     },
                     {
                         use: [
                             MiniCssExtractPlugin.loader,
                             'css-loader',
+                            postcssLoader,
                             'sass-loader'
                         ]
                     }
