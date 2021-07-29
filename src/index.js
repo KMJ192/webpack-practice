@@ -1,7 +1,6 @@
 import 'normalize.css';
 import styles from './index.module.scss';
 import $ from 'jquery';
-import img1 from './assets/Messi.jpg';
 import './assets/Messi2.jpg';
 import svg from './assets/sample.svg';
 
@@ -12,6 +11,7 @@ function component() {
     // imgElement.src = img1;
     const imgElement = document.createElement('img');
     imgElement.src = svg;
+    imgElement.classList = styles.image;
 
     console.log(styles);
     element.innerHTML = "Hello Webpack";
