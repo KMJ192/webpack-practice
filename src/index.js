@@ -2,6 +2,9 @@ import styles from './index.module.scss';
 import $ from 'jquery';
 import svg from './assets/sample.svg';
 
+import '@babel/polyfill';
+
+
 function component() {
     const element = document.createElement('div');
 

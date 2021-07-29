@@ -18,9 +18,6 @@
 ### css module, sass 설정
 설정 내용 : [blog post](https://kmj24.tistory.com/180 "blog link")
 
-### Babel 설정
-
-
 ### 추가설정내용
 #### post css
 - css스팩 중 표준화가 나중에 진행된 스팩들을 하위 browser에서도 안전하게 대응할 수 있도록 함.
@@ -94,3 +91,16 @@ const config = {
     ...
 };
 ```
+
+### Babel 설정
+- babel plugin 설치
+```
+yarn add @babel/cli @babel/core @babel/preset-env babel-loader -D
+```
+- babel.config.js 파일 생성 및 모듈 작성
+- babel polyfill 설정
+```
+yarn add @babel/polyfill -D
+```
+- babel polyfill은 application이 실행된 후 최초 한번만 load
+
