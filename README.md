@@ -22,7 +22,7 @@
 ###### post css
 - css스팩 중 표준화가 나중에 진행된 스팩들을 하위 browser에서도 안전하게 대응할 수 있도록 함.
 - ex) flex, grid를 하위 browser에서도 사용할 수 있도록 함.
-- autoprefixer 플러그인을 통해 prefix가 필요한 모든 속성을 찾아 추가시킴
+- autoprefixer 플러그인을 통해 prefix가 필요한 모든 속성을 찾아 추가시킴 (자동으로 설정되게 하는 플러그인)
 - postcss, postcss-loader, autoprefixer 설치
   1. 설치
     + yarn
@@ -49,3 +49,14 @@
   }
   ```
   4. webpack css module에 postcssLoader설정 (sass-loader다음 순서, css-loader이전 순서로 수행하도록 설정)
+
+###### browserslist
+- package.json에서 browserslist를 설정할 수 있음
+- autoprefix를 사용하므로 추가적인 작업 x
+```
+  "browserslist": [
+    "last 2 versions", // 각 브라우저의 최신, 이전버전 지원
+    "IE 10",           // internet explore v10 지원
+    "Firefox > 20"     // firefox v20이상 지원
+  ]
+```
